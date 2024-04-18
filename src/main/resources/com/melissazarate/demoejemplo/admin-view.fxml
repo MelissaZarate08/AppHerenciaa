@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="594.0" prefWidth="766.0" style="-fx-background-color: #45B39D;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.melissazarate.demoejemplo.controllers.VentasController">
+   <children>
+      <ImageView fitHeight="623.0" fitWidth="415.0" layoutX="-215.0" opacity="0.43" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/fondo.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="99.0" fitWidth="129.0" layoutX="35.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Logoo2.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="labelQuestion" layoutX="46.0" layoutY="124.0" prefHeight="31.0" prefWidth="101.0" styleClass="nanum-regular" text="VENTAS" textFill="#3f240a">
+         <font>
+            <Font name="Century Gothic" size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="TablaVentasView" layoutX="212.0" layoutY="113.0" prefHeight="411.0" prefWidth="546.0">
+         <columns>
+            <TableColumn fx:id="IdColumn" prefWidth="68.80003356933594" text="ID " />
+            <TableColumn fx:id="ProductoColumn" prefWidth="141.60003662109375" text="PRODUCTO" />
+            <TableColumn fx:id="TipoColumn" minWidth="5.59991455078125" prefWidth="99.99993896484375" text="TIPO" />
+            <TableColumn fx:id="NombreClienteColumn" minWidth="8.800018310546875" prefWidth="136.79998779296875" text="NOMBRE DEL CLIENTE" />
+            <TableColumn fx:id="TotalColumn" prefWidth="154.40008544921875" text="TOTAL" />
+         </columns>
+      </TableView>
+      <Label layoutX="365.0" layoutY="55.0" text="VENTAS REALIZADAS " textFill="WHITE">
+         <font>
+            <Font name="Century Gothic" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
