@@ -1,6 +1,6 @@
 package com.melissazarate.demoejemplo.controllers;
 
-import com.melissazarate.demoejemplo.HelloApplication;
+import com.melissazarate.demoejemplo.App;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloController {
+public class HomeController {
 
     @FXML
     private Button buttonPedidos;
@@ -29,7 +29,7 @@ public class HelloController {
 
     @FXML
     void OnMouseClickButtonPedidos(MouseEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("admin-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         admin.setTitle("Cafetería - Ventas");
         admin.setScene(scene);
@@ -38,7 +38,7 @@ public class HelloController {
 
     @FXML
     void OnMouseClickButtonVentas(MouseEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("pedido-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("pedido-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         pedidos.setTitle("Cafetería - Pedidos");
         pedidos.setScene(scene);

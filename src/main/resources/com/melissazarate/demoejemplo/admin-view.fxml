@@ -27,11 +27,10 @@
       </Label>
       <TableView fx:id="TablaVentasView" layoutX="212.0" layoutY="113.0" prefHeight="411.0" prefWidth="546.0">
          <columns>
-            <TableColumn fx:id="IdColumn" prefWidth="68.80003356933594" text="ID " />
             <TableColumn fx:id="ProductoColumn" prefWidth="141.60003662109375" text="PRODUCTO" />
             <TableColumn fx:id="TipoColumn" minWidth="5.59991455078125" prefWidth="99.99993896484375" text="TIPO" />
-            <TableColumn fx:id="NombreClienteColumn" minWidth="8.800018310546875" prefWidth="136.79998779296875" text="NOMBRE DEL CLIENTE" />
-            <TableColumn fx:id="TotalColumn" prefWidth="154.40008544921875" text="TOTAL" />
+            <TableColumn fx:id="NombreClienteColumn" minWidth="8.800018310546875" prefWidth="158.0" text="NOMBRE DEL CLIENTE" />
+            <TableColumn fx:id="TotalColumn" prefWidth="145.0" text="TOTAL" />
          </columns>
       </TableView>
       <Label layoutX="365.0" layoutY="55.0" text="VENTAS REALIZADAS " textFill="WHITE">

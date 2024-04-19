@@ -1,17 +1,17 @@
 package com.melissazarate.demoejemplo.controllers;
 
-import java.net.URL;
-import java.util.List;
-import java.util.ResourceBundle;
-
-import com.melissazarate.demoejemplo.models.Administracion;
 import com.melissazarate.demoejemplo.models.Producto;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
 
 public class VentasController {
 
@@ -31,7 +31,7 @@ public class VentasController {
     private TableColumn<Producto, String> ProductoColumn;
 
     @FXML
-    private TableView<Administracion> TablaVentasView;
+    private TableView<Producto> TablaVentasView;
 
     @FXML
     private TableColumn<Producto, String> TipoColumn;
@@ -42,15 +42,20 @@ public class VentasController {
     @FXML
     private Label labelQuestion;
 
+    private static ObservableList<Producto> observableListaProductos = FXCollections.observableArrayList();
+
+    public static void actualizarListaProductos(List<Producto> listaProductos) {
+        observableListaProductos.clear();
+        observableListaProductos.addAll(listaProductos);
+    }
+
     @FXML
     void initialize() {
-        IdColumn.setCellValueFactory(cellData -> cellData.getValue().idVentaProperty());
         NombreClienteColumn.setCellValueFactory(cellData -> cellData.getValue().nombreClienteProperty());
         ProductoColumn.setCellValueFactory(cellData -> cellData.getValue().nombreProperty());
         TipoColumn.setCellValueFactory(cellData -> cellData.getValue().tipoProperty());
-        TotalColumn.setCellValueFactory(cellData -> cellData.getValue().);
-        List<Administracion> observableVentas = Administracion.getListaProductos();
-        ObservableList<Administracion> observableListVentas = FXCollections.observableArrayList(observableVentas);
-        TablaVentasView.setItems(observableListVentas);
+        TotalColumn.setCellValueFactory(cellData -> new SimpleStringProperty(Double.toString(cellData.getValue().getPrecio())));
+
+        TablaVentasView.setItems(observableListaProductos);
     }
 }

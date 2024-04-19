@@ -4,36 +4,18 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Producto {
-    private SimpleStringProperty idVenta;
     private SimpleStringProperty nombre;
-    private SimpleDoubleProperty precio;
     private SimpleStringProperty tipo;
     private SimpleStringProperty nombreCliente;
     private SimpleDoubleProperty totalVenta;
 
-    public Producto(String idVenta, String nombre, double precio, String tipo, String nombreCliente, double totalVenta) {
-        this.idVenta = new SimpleStringProperty(idVenta);
+    public Producto( String nombre, String tipo, String nombreCliente, double precio) {
         this.nombre = new SimpleStringProperty(nombre);
-        this.precio = new SimpleDoubleProperty(precio);
         this.tipo = new SimpleStringProperty(tipo);
         this.nombreCliente = new SimpleStringProperty(nombreCliente);
-        this.totalVenta = new SimpleDoubleProperty(totalVenta);
+        this.totalVenta = new SimpleDoubleProperty(precio);
     }
 
-    public Producto(String nombre, double precio, String tipo, String nombreCliente) {
-    }
-
-    public String getIdVenta() {
-        return idVenta.get();
-    }
-
-    public SimpleStringProperty idVentaProperty() {
-        return idVenta;
-    }
-
-    public void setIdVenta(String idVenta) {
-        this.idVenta.set(idVenta);
-    }
 
     public String getNombre() {
         return nombre.get();
@@ -47,17 +29,6 @@ public class Producto {
         this.nombre.set(nombre);
     }
 
-    public double getPrecio() {
-        return precio.get();
-    }
-
-    public SimpleDoubleProperty precioProperty() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio.set(precio);
-    }
 
     public String getTipo() {
         return tipo.get();
@@ -83,15 +54,23 @@ public class Producto {
         this.nombreCliente.set(nombreCliente);
     }
 
-    public double getTotalVenta() {
-        return totalVenta.get();
+    public double getPrecio() {
+        return precioProperty().get();
     }
 
-    public SimpleDoubleProperty totalVentaProperty() {
+    public SimpleDoubleProperty precioProperty() {
         return totalVenta;
     }
 
-    public void setTotalVenta(double totalVenta) {
+    public void setPrecio(double totalVenta) {
         this.totalVenta.set(totalVenta);
+    }
+
+    @Override
+    public String toString() {
+        return  "Nombre: " + getNombre() +
+                ",Tipo: " + tipo +
+                ", Nombre del Cliente: " + getNombreCliente() +
+                ", Total Venta: " + getPrecio();
     }
 }

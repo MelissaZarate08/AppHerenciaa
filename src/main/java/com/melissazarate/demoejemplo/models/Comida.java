@@ -2,18 +2,27 @@ package com.melissazarate.demoejemplo.models;
 
 public class Comida extends Producto {
 
-    private String tipoComida;
+    private String calorias;
 
-    public Comida(String nombre, String precio, String tipo, String nombreCliente, String idVenta) {
-        super(nombre, precio, tipo, nombreCliente, idVenta);
-        this.tipoComida = tipoComida;
+    public Comida(String nombre, String tipo, String nombreCliente, String calorias, double precio) {
+        super( nombre, tipo, nombreCliente, precio);
+        this.calorias = calorias;
     }
 
-    public String getTipoComida() {
-        return tipoComida;
+    public String getCalorias() {
+        return calorias;
     }
 
-    public void setTipoComida(String tipoComida) {
-        this.tipoComida = tipoComida;
+    public void setCalorias(String calorias) {
+        this.calorias = calorias;
+    }
+
+    @Override
+    public String toString() {
+        return "Nombre: " + getNombre() +
+                ",Tipo: " + getTipo() +
+                ", Nombre del Cliente: " + getNombreCliente() +
+                ", Total Venta: " + getPrecio() +
+                "Calorias: " + calorias;
     }
 }

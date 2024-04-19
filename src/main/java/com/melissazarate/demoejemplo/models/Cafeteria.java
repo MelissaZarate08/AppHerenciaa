@@ -2,10 +2,10 @@ package com.melissazarate.demoejemplo.models;
 
 import java.util.ArrayList;
 
-public class Administracion {
-    public ArrayList<Producto> listaProductos = new ArrayList<>();
+public class Cafeteria {
+    private ArrayList<Producto> listaProductos = new ArrayList<>();
 
-    public boolean addProducto(Producto producto){
+    public boolean addProducto(Producto producto) {
         return listaProductos.add(producto);
     }
 
